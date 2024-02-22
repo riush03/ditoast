@@ -1,0 +1,54 @@
+appName: Рикошырыш
+homePage:
+  playButton: Ойнау
+  settingsButton: Баптау
+  tutorialButton: Нұсқаулық
+playPage:
+  highScore: "Үздік: $p"
+settingsPage:
+  title: Баптау
+  adConsent: Жарнамаға келісімді баптау
+  hyperlegibleFont: Atkinson Hyperlegible қарпін қолдану
+  showColliders(OUTDATED): Құбыжық коллайдерлерін көрсетіңіз
+  appInfo: Қолданба ақпары
+  licenseNotice: |-
+    Ricochlime  Copyright (C) 2023-$buildYear  Adil Hanney
+    Бұл бағдарлама еш кепілдіксіз жеткізіледі. Ол еркін екенін ескере отырып, сіз оны кейбір шарттардың аясында еркін тарата аласыз.
+  bgmVolume(OUTDATED): Фондық музыканың дыбыс деңгейі
+ageDialog:
+  yourAge: Жасыңыз
+  letMeGuessYourAge: Жасыңызды болжау
+  unknown: Белгісіз
+  reason: Сіз көретін жарнама сізге қолайлы болатынына көз жеткізу үшін жасыңызды білуіміз керек. Ойынның өзіне бұл әсер етпейді.
+  areYou: "Жасыңыз $age?"
+  younger: "Жоқ, жасым кішірек"
+  older: "Жоқ, жасым үлкенірек"
+  yesMyAgeIs: "Иә, жасым $age"
+  reset: Арылту
+  howOldAreYou(OUTDATED): "Сен қанша жастасың?"
+  invalidAge(OUTDATED): Жарамды жасты енгізіңіз
+  useMinigame(OUTDATED): Жасты болжайтын шағын ойынды ойнаңыз
+  useSimpleInput(OUTDATED): Мен жасымды қолмен енгізгім келеді
+  guessNumber(OUTDATED): Ойланыңыз \#$n
+gameOverPage:
+  title: "Ойын бітті!"
+  highScoreNotBeaten: "$p ұпай жинадыңыз!"
+  highScoreBeaten(rich): "Енді үздік нәтижеңіз $pOld $pNew ұпай!"
+  continueWithAdButton: "Жарнама көріп, жалғастыру"
+  restartGameButton: Жаңадан бастау
+  homeButton: Мәзір
+restartGameDialog:
+  title(OUTDATED): "Ойынды қайта бастау керек пе?"
+  areYouSure(OUTDATED): "Қайта іске қосқыңыз келетініне сенімдісіз бе? Мұны қайтара алмайсыз"
+  waitCancel(OUTDATED): "Күте тұрыңыз, бас тартыңыз!"
+  yesImSure(OUTDATED): "Иә мен сенімдімін!"
+tutorialPage:
+  tutorial: Нұсқаулық
+  aimAtMonsters: "Көздеу үшін саусағыңызды жылжытыңыз, ату үшін босатып жіберіңіз. Шырышты жеңу үшін оның денсаулық жолағын нөлге дейін жеткізіңіз."
+  bounceOffWalls: Қабырғадан ыршыған оқ көбірек шырышқа тие алады.
+  tapSpeedUp: Оқ қозғалысын тездету үшін экранды түртіңіз.
+  dangerZone: "Қауіпті аймаққа кірген шырышты жеңбесеңіз, келесі жүрісте ұтыласыз."
+  moreMonsters(OUTDATED): "Сіз ілгерілеген сайын құбыжықтардың көбірек қатарлары пайда болады, сондықтан қауіпті аймақ ұлғаяды."
+common:
+  cancel: Болдырмау
+  ok: ОК

@@ -1,0 +1,54 @@
+appName: Ricochlime
+homePage:
+  playButton: Play
+  settingsButton: Settings
+  tutorialButton: Tutorial
+playPage:
+  highScore: "Best: $p"
+settingsPage:
+  title: Settings
+  adConsent: Change ad consent
+  hyperlegibleFont: Use the Atkinson Hyperlegible font
+  bgmVolume: Background music volume
+  showColliders: Show monster colliders
+  appInfo: App info
+  licenseNotice: |-
+    Ricochlime  Copyright (C) 2023-$buildYear  Adil Hanney
+    This program comes with absolutely no warranty. This is free software, and you are welcome to redistribute it under certain conditions.
+ageDialog:
+  yourAge: Your age
+  letMeGuessYourAge: Let me guess your age
+  unknown: Unknown
+  reason: We need to know your age to make sure the ads you see are appropriate for you. This will not affect gameplay.
+  guessNumber: Guess \#$n
+  areYou: Are you $age?
+  younger: No, I'm younger
+  older: No, I'm older
+  yesMyAgeIs: Yes, I'm $age
+  reset: Reset
+  howOldAreYou: How old are you?
+  invalidAge: Please enter a valid age
+  useMinigame: Play the age guessing minigame
+  useSimpleInput: I want to enter my age manually
+gameOverPage:
+  title: Game over!
+  highScoreNotBeaten: You scored $p points!
+  highScoreBeaten(rich): Your high score is now $pOld $pNew points!
+  continueWithAdButton: Continue with ad
+  restartGameButton: Restart game
+  homeButton: Home
+restartGameDialog:
+  title: Restart game?
+  areYouSure: Are you sure you want to restart? You can't undo this
+  waitCancel: Wait, cancel!
+  yesImSure: Yes I'm sure!
+tutorialPage:
+  tutorial: Tutorial
+  aimAtMonsters: Drag your finger to aim and release to shoot. Defeat a monster by emptying its health bar.
+  bounceOffWalls: Bounce your shots off the walls to hit the most monsters.
+  tapSpeedUp: Tap the screen to speed up your shots.
+  dangerZone: If a monster reaches the danger zone, you'll lose on your next turn if you don't defeat it.
+  moreMonsters: More rows of monsters will spawn each turn as you progress, so the danger zone will also get bigger.
+common:
+  cancel: Cancel
+  ok: Okay
