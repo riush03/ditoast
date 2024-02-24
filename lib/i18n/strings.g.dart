@@ -142,7 +142,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	String get appName => 'Ricochlime';
+	String get appName => 'Ditoast';
 	late final _StringsHomePageEn homePage = _StringsHomePageEn._(_root);
 	late final _StringsPlayPageEn playPage = _StringsPlayPageEn._(_root);
 	late final _StringsSettingsPageEn settingsPage = _StringsSettingsPageEn._(_root);
