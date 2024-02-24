@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nes_ui/nes_ui.dart';
+import 'package:uuid/uuid.dart';
 import 'package:ditoast/game/ditoast.dart';
 import 'package:ditoast/i18n/strings.g.dart';
 import 'package:ditoast/themes/dialog_button.dart';
+import 'package:add_to_google_wallet/widgets/add_to_google_wallet_button.dart';
 import 'package:ditoast/utils/prefs.dart';
 
 class GameOverDialog extends StatelessWidget {
@@ -79,6 +81,18 @@ class GameOverDialog extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 32),
+                    //google wallet button
+                    AddToGoogleWalletButton(
+                      pass:_ditoastGamePass,
+                      onSuccess: () => _showSnackBar(context, 'Success!'),
+                      onCanceled: () => _showSnackBar(context,'Action Cancelled'),
+                      onError: (Object error) => _showSnackBar(context, error.toString()),
+                      locale: const Locale.fromSubtags(
+                        languageCode: 'fr',
+                        countryCode: 'FR',
+                      ),
+                    ),
+                    const SizedBox(height: 32),
                    
                     DialogButton(
                       onPressed: () {
@@ -109,6 +123,9 @@ class GameOverDialog extends StatelessWidget {
       ),
     );
   }
+
+  void _showSnackBar(BuildContext context,String text) =>
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
 }
 
 enum GameOverAction {
@@ -116,3 +133,67 @@ enum GameOverAction {
   restartGame,
   nothingYet,
 }
+
+final String _passId = const Uuid().v4();
+const String _passClass = 'codelab_class';
+const String _issuerId = '3388000000022320835';
+const String _issuerEmail = 'Dennzriush@gmail.com';
+
+
+final String _ditoastGamePass = """ 
+    {
+      "iss": "$_issuerEmail",
+      "aud": "google",
+      "typ": "savetowallet",
+      "origins": [],
+      "payload": {
+        "genericObjects": [
+          {
+            "id": "$_issuerId.$_passId",
+            "classId": "$_issuerId.$_passClass",
+            "genericType": "GENERIC_TYPE_UNSPECIFIED",
+            "hexBackgroundColor": "#4285f4",
+            "logo": {
+              "sourceUri": {
+                "uri": "https://storage.googleapis.com/wallet-lab-tools-codelab-artifacts-public/pass_google_logo.jpg"
+              }
+            },
+            "cardTitle": {
+              "defaultValue": {
+                "language": "en",
+                "value": "DITOAST GAME '24 [DEMO ONLY]"
+              }
+            },
+            "subheader": {
+              "defaultValue": {
+                "language": "en",
+                "value": "Attendee"
+              }
+            },
+            "header": {
+              "defaultValue": {
+                "language": "en",
+                "value": "Alex McJacobs"
+              }
+            },
+            "barcode": {
+              "type": "QR_CODE",
+              "value": "$_passId"
+            },
+            "heroImage": {
+              "sourceUri": {
+                "uri": "https://storage.googleapis.com/wallet-lab-tools-codelab-artifacts-public/google-io-hero-demo-only.jpg"
+              }
+            },
+            "textModulesData": [
+              {
+                "header": "POINTS",
+                "body": "1234",
+                "id": "points"
+              }
+            ]
+          }
+        ]
+      }
+    }
+""";
