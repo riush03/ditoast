@@ -7,7 +7,7 @@ import 'package:ditoast/game/components/player.dart';
 import 'package:ditoast/game/ditoast.dart';
 
 /// The background component which contains all the background tiles.
-class Background extends PositionComponent with HasGameRef<RicochlimeGame> {
+class Background extends PositionComponent with HasGameRef<DitoastGame> {
   final List<DarkeningSprite> tiles = [];
 
   @override
@@ -113,7 +113,7 @@ class Background extends PositionComponent with HasGameRef<RicochlimeGame> {
   /// Preloads all sprite sheets so they can be
   /// accessed synchronously later.
   static Future<void> preloadSprites({
-    required RicochlimeGame gameRef,
+    required DitoastGame gameRef,
   }) {
     return gameRef.images.load('overworld.png');
   }

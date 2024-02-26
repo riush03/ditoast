@@ -8,12 +8,12 @@ import 'package:ditoast/scenes/game_over.dart';
 import 'package:ditoast/scenes/restart_game.dart';
 import 'package:ditoast/utils/brightness_extension.dart';
 import 'package:ditoast/utils/prefs.dart';
-import 'package:ditoast/utils/ricochlime_palette.dart';
+import 'package:ditoast/utils/ditoast_palette.dart';
 
 final ValueNotifier<int> _score = ValueNotifier(0);
 final ValueNotifier<bool> _isDarkMode = ValueNotifier(false);
 final ValueNotifier<double> _timeDilation = ValueNotifier(1);
-final game = RicochlimeGame(
+final game = DitoastGame(
   score: _score,
   isDarkMode: _isDarkMode,
   timeDilation: _timeDilation,
@@ -80,22 +80,22 @@ class _PlayPageState extends State<PlayPage> {
         statusBarBrightness: colorScheme.brightness,
         statusBarIconBrightness: colorScheme.brightness.opposite,
         systemNavigationBarColor: _isDarkMode.value
-            ? RicochlimePalette.grassColorDark
-            : RicochlimePalette.grassColor,
+            ? DitoastPalette.grassColorDark
+            : DitoastPalette.grassColor,
         systemNavigationBarIconBrightness: colorScheme.brightness.opposite,
       ),
       child: ColoredBox(
         color: _isDarkMode.value
-            ? RicochlimePalette.grassColorDark
-            : RicochlimePalette.grassColor,
+            ? DitoastPalette.grassColorDark
+            : DitoastPalette.grassColor,
         child: SafeArea(
           child: Stack(
             children: [
               Positioned.fill(
                 child: FittedBox(
                   child: SizedBox(
-                    width: RicochlimeGame.expectedWidth,
-                    height: RicochlimeGame.expectedHeight,
+                    width: DitoastGame.expectedWidth,
+                    height: DitoastGame.expectedHeight,
                     child: Stack(
                       children: [
                         Positioned.fill(

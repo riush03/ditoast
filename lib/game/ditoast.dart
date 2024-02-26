@@ -21,7 +21,7 @@ import 'package:ditoast/game/game_data.dart';
 import 'package:ditoast/game/ticker.dart';
 import 'package:ditoast/scenes/game_over.dart';
 import 'package:ditoast/utils/prefs.dart';
-import 'package:ditoast/utils/ricochlime_palette.dart';
+import 'package:ditoast/utils/ditoast_palette.dart';
 
 enum GameState {
   idle,
@@ -30,9 +30,9 @@ enum GameState {
   gameOver,
 }
 
-class RicochlimeGame extends Forge2DGame
+class DitoastGame extends Forge2DGame
     with PanDetector, TapDetector, SingleGameInstance {
-  RicochlimeGame({
+  DitoastGame({
     required this.score,
     required this.isDarkMode,
     required this.timeDilation,
@@ -53,7 +53,7 @@ class RicochlimeGame extends Forge2DGame
     physics_settings.maxTranslation = Bullet.speed;
   }
 
-  static RicochlimeGame? _instance;
+  static DitoastGame? _instance;
 
   /// Width to height aspect ratio
   static const aspectRatio = 1 / 2;
@@ -288,8 +288,8 @@ class RicochlimeGame extends Forge2DGame
 
   @override
   Color backgroundColor() => isDarkMode.value
-      ? RicochlimePalette.grassColorDark
-      : RicochlimePalette.grassColor;
+      ? DitoastPalette.grassColorDark
+      : DitoastPalette.grassColor;
 
   @override
   void onPanUpdate(DragUpdateInfo info) {

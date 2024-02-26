@@ -7,7 +7,7 @@ import 'package:ditoast/game/components/bullet.dart';
 import 'package:ditoast/game/components/health_bar.dart';
 import 'package:ditoast/game/ditoast.dart';
 import 'package:ditoast/utils/prefs.dart';
-import 'package:ditoast/utils/ricochlime_palette.dart';
+import 'package:ditoast/utils/ditoast_palette.dart';
 
 /// The animation state of the monster.
 enum MonsterState {
@@ -31,7 +31,7 @@ class Monster extends BodyComponent with ContactCallbacks {
     bool? givesPlayerABullet,
   })  : hp = hp ?? maxHp,
         super(
-          paint: Paint()..color = RicochlimePalette.monsterColor,
+          paint: Paint()..color = DitoastPalette.monsterColor,
           priority: getPriorityFromPosition(initialPosition),
         ) {
     if (givesPlayerABullet != null) {
@@ -69,7 +69,7 @@ class Monster extends BodyComponent with ContactCallbacks {
   static const monstersPerRow = 8;
 
   /// The width of the monster.
-  static const staticWidth = RicochlimeGame.expectedWidth / monstersPerRow;
+  static const staticWidth = DitoastGame.expectedWidth / monstersPerRow;
 
   /// The height of the monster.
   static const staticHeight = staticWidth;
@@ -177,7 +177,7 @@ class Monster extends BodyComponent with ContactCallbacks {
   @visibleForTesting
   static int getPriorityFromPosition(Vector2 position) {
     const maxPriority = 0;
-    final yRelative = position.y / RicochlimeGame.expectedHeight;
+    final yRelative = position.y / DitoastGame.expectedHeight;
     assert(yRelative >= 0 && yRelative <= 1);
     return lerpDouble(minPriority, maxPriority, yRelative)!.floor();
   }
@@ -255,7 +255,7 @@ class Monster extends BodyComponent with ContactCallbacks {
       _healthBar.hp = hp;
       if (hp <= 0) {
         if (givesPlayerABullet) {
-          (game as RicochlimeGame).numBullets += 1;
+          (game as DitoastGame).numBullets += 1;
         }
 
         _animation
@@ -295,7 +295,7 @@ class _MonsterMovement {
 /// It should not be used directly,
 /// but only for type checking.
 class MonsterAnimation extends SpriteAnimationGroupComponent<MonsterState>
-    with HasGameRef<RicochlimeGame> {
+    with HasGameRef<DitoastGame> {
   MonsterAnimation._()
       : super(
           position: _relativePosition.clone(),
@@ -348,7 +348,7 @@ class MonsterAnimation extends SpriteAnimationGroupComponent<MonsterState>
 
   /// Preloads the sprites for the monster.
   static Future<void> preloadSprites({
-    required RicochlimeGame gameRef,
+    required DitoastGame gameRef,
   }) {
     return gameRef.images.load('log_subset.png');
   }

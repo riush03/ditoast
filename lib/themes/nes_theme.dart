@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nes_ui/nes_ui.dart';
 import 'package:ditoast/utils/prefs.dart';
-import 'package:ditoast/utils/ricochlime_palette.dart';
+import 'package:ditoast/utils/ditoast_palette.dart';
 
 ThemeData nesThemeFrom({
   required Brightness brightness,
@@ -49,10 +49,10 @@ ThemeData nesThemeFrom({
             ),
       borderColor: brightness == Brightness.light
           ? colorScheme.onSurface
-          : RicochlimePalette.grassColorDark,
+          : DitoastPalette.grassColorDark,
     ),
     nesContainerTheme: NesContainerTheme(
-      borderColor: RicochlimePalette.grassColorDark,
+      borderColor: DitoastPalette.grassColorDark,
       backgroundColor: Colors.transparent,
       labelTextStyle: textTheme.labelMedium ?? const TextStyle(),
     ),

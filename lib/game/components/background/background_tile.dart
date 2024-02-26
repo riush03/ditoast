@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:ditoast/game/ditoast.dart';
 
 class HouseSprite extends SpriteComponent
-    with HasGameRef<RicochlimeGame>, DarkeningSprite {
+    with HasGameRef<DitoastGame>, DarkeningSprite {
   HouseSprite({
     super.position,
     super.size,
@@ -25,7 +25,7 @@ class HouseSprite extends SpriteComponent
 }
 
 class GrassSprite extends SpriteComponent
-    with HasGameRef<RicochlimeGame>, DarkeningSprite {
+    with HasGameRef<DitoastGame>, DarkeningSprite {
   GrassSprite({
     super.position,
     super.size,
@@ -43,7 +43,7 @@ class GrassSprite extends SpriteComponent
 }
 
 class BridgeSprite extends SpriteComponent
-    with HasGameRef<RicochlimeGame>, DarkeningSprite {
+    with HasGameRef<DitoastGame>, DarkeningSprite {
   BridgeSprite({
     super.position,
     super.size,
@@ -61,7 +61,7 @@ class BridgeSprite extends SpriteComponent
 }
 
 class WaterSprite extends SpriteAnimationComponent
-    with HasGameRef<RicochlimeGame>, DarkeningSprite {
+    with HasGameRef<DitoastGame>, DarkeningSprite {
   WaterSprite({
     super.position,
     super.size,
@@ -84,7 +84,7 @@ class WaterSprite extends SpriteAnimationComponent
 }
 
 class BushSprite extends SpriteComponent
-    with HasGameRef<RicochlimeGame>, DarkeningSprite {
+    with HasGameRef<DitoastGame>, DarkeningSprite {
   BushSprite({
     super.position,
     super.size,
@@ -102,7 +102,7 @@ class BushSprite extends SpriteComponent
 }
 
 /// A sprite that darkens when the game is in dark mode.
-mixin DarkeningSprite on HasPaint, HasGameRef<RicochlimeGame> {
+mixin DarkeningSprite on HasPaint, HasGameRef<DitoastGame> {
   @override
   FutureOr<void> onLoad() async {
     await super.onLoad();

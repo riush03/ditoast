@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flame/components.dart';
 import 'package:ditoast/game/components/monster.dart';
-import 'package:ditoast/utils/ricochlime_palette.dart';
+import 'package:ditoast/utils/ditoast_palette.dart';
 
 class HealthBar extends PositionComponent {
   HealthBar({
@@ -49,12 +49,12 @@ class HealthBar extends PositionComponent {
       // background
       ..drawRect(
         backgroundRect,
-        paint..color = RicochlimePalette.healthBarBackgroundColor,
+        paint..color = DitoastPalette.healthBarBackgroundColor,
       )
       // foreground
       ..drawRect(
         foregroundRect,
-        paint..color = RicochlimePalette.healthBarForegroundColor,
+        paint..color = DitoastPalette.healthBarForegroundColor,
       );
   }
 }

@@ -13,7 +13,7 @@ import 'package:ditoast/scenes/play.dart';
 import 'package:ditoast/scenes/settings.dart';
 import 'package:ditoast/scenes/tutorial.dart';
 import 'package:ditoast/utils/prefs.dart';
-import 'package:ditoast/utils/ricochlime_palette.dart';
+import 'package:ditoast/utils/ditoast_palette.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -95,13 +95,13 @@ class _MyAppState extends State<MyApp> {
       theme: nesThemeFrom(
         brightness: Brightness.light,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: RicochlimePalette.grassColor,
+          seedColor: DitoastPalette.grassColor,
         ),
       ),
       darkTheme: nesThemeFrom(
         brightness: Brightness.dark,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: RicochlimePalette.grassColor,
+          seedColor: DitoastPalette.grassColor,
           brightness: Brightness.dark,
         ),
       ),

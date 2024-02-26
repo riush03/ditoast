@@ -7,7 +7,7 @@ enum PlayerState {
 }
 
 class Player extends SpriteAnimationGroupComponent<PlayerState>
-    with HasGameRef<RicochlimeGame> {
+    with HasGameRef<DitoastGame> {
   Player()
       : super(
           size: Vector2(staticWidth, staticHeight),
@@ -15,8 +15,8 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
           priority: 3,
         ) {
     position = Vector2(
-      RicochlimeGame.expectedWidth * 0.5,
-      RicochlimeGame.expectedHeight * 0.75 + staticHeight * 0.5,
+      DitoastGame.expectedWidth * 0.5,
+      DitoastGame.expectedHeight * 0.75 + staticHeight * 0.5,
     );
   }
 
@@ -42,7 +42,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
   }
 
   static Future<void> preloadSprites({
-    required RicochlimeGame gameRef,
+    required DitoastGame gameRef,
   }) {
     return gameRef.images.load('character_subset.png');
   }

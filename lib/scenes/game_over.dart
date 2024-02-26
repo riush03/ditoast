@@ -1,8 +1,12 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nes_ui/nes_ui.dart';
 import 'package:uuid/uuid.dart';
 import 'package:ditoast/game/ditoast.dart';
+import 'package:flutter/foundation.dart';
 import 'package:ditoast/i18n/strings.g.dart';
 import 'package:ditoast/themes/dialog_button.dart';
 import 'package:add_to_google_wallet/widgets/add_to_google_wallet_button.dart';
@@ -16,7 +20,7 @@ class GameOverDialog extends StatelessWidget {
   });
 
   final int score;
-  final RicochlimeGame game;
+  final DitoastGame game;
 
   @override
   Widget build(BuildContext context) {
@@ -82,17 +86,22 @@ class GameOverDialog extends StatelessWidget {
                     ),
                     const SizedBox(height: 32),
                     //google wallet button
-                    AddToGoogleWalletButton(
-                      pass:_ditoastGamePass,
-                      onSuccess: () => _showSnackBar(context, 'Success!'),
-                      onCanceled: () => _showSnackBar(context,'Action Cancelled'),
-                      onError: (Object error) => _showSnackBar(context, error.toString()),
-                      locale: const Locale.fromSubtags(
-                        languageCode: 'fr',
-                        countryCode: 'FR',
-                      ),
-                    ),
-                    const SizedBox(height: 32),
+                    
+                          AddToGoogleWalletButton(
+                             pass:_ditoastGamePass,
+                             onSuccess: () async {
+                                _showSnackBar(context, 'Added to wallet successfully');
+                                context.pop<GameOverAction>(GameOverAction.continueGame);
+                             },
+                             onCanceled: () => _showSnackBar(context,'Action Cancelled'),
+                             onError: (Object error) => _showSnackBar(context, error.toString()),
+                             locale: const Locale.fromSubtags(
+                                languageCode: 'en',
+                                countryCode: 'US',
+                             ),
+                          ),
+                          const SizedBox(height: 32),
+                    
                    
                     DialogButton(
                       onPressed: () {

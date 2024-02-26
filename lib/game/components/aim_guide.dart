@@ -7,7 +7,7 @@ import 'package:ditoast/game/ditoast.dart';
 
 /// A component that draws a dotted line
 /// to show the user where they're aiming.
-class AimGuide extends PositionComponent with HasGameRef<RicochlimeGame> {
+class AimGuide extends PositionComponent with HasGameRef<DitoastGame> {
   final Paint _paint = Paint()..color = Colors.white;
 
   /// Information about the current aim.
