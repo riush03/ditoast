@@ -188,7 +188,7 @@ class _StringsSettingsPageEn {
 	String get bgmVolume => 'Background music volume';
 	String get showColliders => 'Show monster colliders';
 	String get appInfo => 'App info';
-	String licenseNotice({required Object buildYear}) => 'Ricochlime  Copyright (C) 2023-${buildYear}  Adil Hanney\nThis program comes with absolutely no warranty. This is free software, and you are welcome to redistribute it under certain conditions.';
+	String licenseNotice({required Object buildYear}) => 'Ditoast  Copyright (C) 2024-${buildYear}  Dennotech\nThis program comes with absolutely no warranty. This is free software, and you are welcome to redistribute it under certain conditions.';
 }
 
 // Path: ageDialog
@@ -230,7 +230,7 @@ class _StringsGameOverPageEn {
 		pNew,
 		const TextSpan(text: ' points!'),
 	]);
-	String get continueWithAdButton => 'Continue with ad';
+	String get continueWithAdButton => 'Continue with wallet';
 	String get restartGameButton => 'Restart game';
 	String get homeButton => 'Home';
 }
