@@ -222,6 +222,7 @@ class _StringsGameOverPageEn {
 
 	// Translations
 	String get title => 'Game over!';
+  String get welcomeMessage => 'Welcome';
 	String highScoreNotBeaten({required Object p}) => 'You scored ${p} points!';
 	TextSpan highScoreBeaten({required InlineSpan pOld, required InlineSpan pNew}) => TextSpan(children: [
 		const TextSpan(text: 'Your high score is now '),
@@ -294,7 +295,7 @@ class _StringsEs extends Translations {
 	@override late final _StringsEs _root = this; // ignore: unused_field
 
 	// Translations
-	@override String get appName => 'Ricochlime';
+	@override String get appName => 'Ditoast';
 	@override late final _StringsHomePageEs homePage = _StringsHomePageEs._(_root);
 	@override late final _StringsPlayPageEs playPage = _StringsPlayPageEs._(_root);
 	@override late final _StringsSettingsPageEs settingsPage = _StringsSettingsPageEs._(_root);

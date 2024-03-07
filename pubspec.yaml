@@ -60,6 +60,11 @@ dependencies:
 
   collapsible: ^1.0.0
   add_to_google_wallet: ^0.0.3
+  google_wallet: ^0.0.1
+  flutter_google_wallet: ^0.0.1
+  url_launcher: ^6.2.5
+  provider: ^6.1.2
+  add_to_google_web_wallet: ^0.0.4
 
 dev_dependencies:
   flutter_test:
@@ -95,6 +100,8 @@ flutter:
     - assets/google_fonts/Silkscreen/
     - assets/audio/bgm/
     - assets/tutorial/
+    - assets/wallet_buttons/
+    - assets/svg/buttons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
